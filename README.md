@@ -2,7 +2,7 @@
 Test Service with healthchecks
 
 ## Requirements
-* Node.js v12.x or later
+* Node.js v16.x or later
 * NPM
 
 ## Set up and run
