@@ -62,7 +62,7 @@ typings/
 
 # Dependency directory
 .idea/
-.vscode/
+# .vscode/
 .DS_Store
 .history/
 
