@@ -2,8 +2,13 @@
 Test Service with healthchecks
 
 ## Requirements
-* Node.js v16.x or later
-* NPM
+- NodeJS 12 or higher
+- NPM 6 or higher
+- Docker 20 or higher
+- Git
+
+## Optional
+- Docker-compose 1.29 or higher
 
 ## Set up and run
 ```sh
