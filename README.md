@@ -48,3 +48,7 @@ curl -v http://localhost:3000/__health/readiness
   "message": "Impossible get readiness"
 }
 ```
+
+## API Documentation
+
+Once the server is up un running, we can access it in: `http://localhost:3000/documentation`
