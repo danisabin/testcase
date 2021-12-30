@@ -1,0 +1,7 @@
+FROM node:16.13.1-alpine3.14
+WORKDIR /home/node/app
+COPY --chown=node:node . .
+RUN npm install
+EXPOSE 3000
+USER node
+CMD ["node","src/index.js"]

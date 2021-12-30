@@ -1,0 +1,11 @@
+.git/
+node_modules/
+.vscode/
+
+Dockerfile*
+.dockerignore
+.env
+.eslintrc.json
+.gitignore
+LICENSE
+README.md

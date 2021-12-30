@@ -57,3 +57,27 @@ curl -v http://localhost:3000/__health/readiness
 ## API Documentation
 
 Once the server is up un running, we can access it in: `http://localhost:3000/documentation`
+
+## Dockerizing the NodeJS application
+
+There is a Dockerfile for the application, called `Dockerfile.application`.
+
+### Building the image
+```sh
+docker build -f Dockerfile.application -t testcase-application .
+```
+
+### Running a container from that image
+```sh
+docker run -p 3000:3000 --name app -d --rm testcase-application
+```
+
+### Stopping the container
+```sh
+docker stop app
+```
+
+### Removing the image
+```
+docker rmi testcase-application
+```
