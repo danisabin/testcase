@@ -72,6 +72,8 @@ docker build -f Dockerfile.application -t testcase-application .
 docker run -p 3000:3000 --name app -d --rm testcase-application
 ```
 
+> At this point, we can send a GET request to the `liveness` endpoint to test the container.
+
 ### Stopping the container
 ```sh
 docker stop app
@@ -80,4 +82,30 @@ docker stop app
 ### Removing the image
 ```
 docker rmi testcase-application
+```
+
+## Provisioning a PostgreSQL database with Docker
+
+There is a dockerfile for PostgreSQL, called `Dockerfile.database`.
+
+### Building the image
+```sh
+docker build -f Dockerfile.database -t testcase-database .
+```
+
+### Running a container from that image
+```sh
+docker run -p 5432:5432 --name db -d --rm --env-file .env testcase-database
+```
+
+> At this point, we can start the NodeJS application (`npm start`) and send a GET request to the `readiness` endpoint to test the container.
+
+### Stopping the container
+```sh
+docker stop db
+```
+
+### Removing the image
+```
+docker rmi testcase-database
 ```
