@@ -21,6 +21,8 @@ services:
       - testcase-network
     env_file:
       - .env
+    environment:
+      - PGHOST=postgresql
     depends_on:
       - postgresql
 
