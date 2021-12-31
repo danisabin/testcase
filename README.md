@@ -109,3 +109,25 @@ docker stop db
 ```
 docker rmi testcase-database
 ```
+
+## Running both the NodeJS application and PostgreSQL in Docker
+
+We will use Docker Compose for that, with definitions in a file called `docker-compose.yml`.
+
+### Running the applications with Docker Compose
+```sh
+docker-compose up -d
+```
+
+> When the containers are ready, we can send a GET request to the `readiness` endpoint to test both containers.
+
+### Stopping the applications with Docker Compose
+```sh
+docker-compose down
+```
+
+## What is the difference between liveness and readiness?
+
+Using the **liveness** endpoint, we can check that the application is 'live', in the sense that it's running and able to respond to the request. Although that is different from being healthy; an application can be running but with faulty behavior.
+
+The **readiness** endpoint allows us to check that the application is running and is healthy; it's 'ready' to receive traffic. In the case of this application, it's considered ready if it can connect to the database and perform a simple SQL query.

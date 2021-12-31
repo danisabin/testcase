@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  postgresql:
+    container_name: db
+    build:
+      context: .
+      dockerfile: Dockerfile.database
+    networks:
+      - testcase-network    
+    env_file:
+      - .env
+  application:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile.application
+    ports:
+      - "3000:3000"
+    networks:
+      - testcase-network
+    env_file:
+      - .env
+    depends_on:
+      - postgresql
+
+networks:
+  testcase-network:
+    name: testcase-network
