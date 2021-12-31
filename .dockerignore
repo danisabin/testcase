@@ -3,6 +3,7 @@ node_modules/
 .vscode/
 
 Dockerfile*
+docker-compose.yml
 .dockerignore
 .env
 .eslintrc.json
